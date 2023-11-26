@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1100.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teupa.controlador.ProgresoCtrl">
+    <stylesheets>
+        <URL value="@/com/teupa/estilo/progreso.css" />
+    </stylesheets>
+   <children>
+      <SplitPane dividerPositions="0.9214046822742475" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.21245421245421245" layoutX="219.0" layoutY="172.0" orientation="VERTICAL" prefHeight="702.0" prefWidth="828.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="104.0" prefWidth="596.0">
+                           <children>
+                              <GridPane prefHeight="81.0" prefWidth="896.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="1158.0">
+                                       <children>
+                                          <Label text="Administración">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="cmbAdministracion" onAction="#habilitaZona" prefHeight="32.0" prefWidth="224.0" />
+                                          <Label text="Zona">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="20.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="cmbZona" onAction="#habilitaNivel" prefHeight="32.0" prefWidth="150.0" />
+                                          <Label text="Nivel">
+                                             <HBox.margin>
+                                                <Insets left="20.0" right="5.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cmbNivel" onAction="#cambiaNivel" prefHeight="32.0" prefWidth="160.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label text="Ciclo">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="cmbCiclo" onAction="#habilitarJornada" prefHeight="32.0" prefWidth="228.0" />
+                                          <Label text="Jornada">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="20.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="cmbJornada" onAction="#habilitarCobertura" prefHeight="32.0" prefWidth="178.0" />
+                                          <Label text="Cobertura">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="20.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="cmbCobertura" onAction="#activarEstadoCentros" prefHeight="32.0" prefWidth="150.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                       <children>
+                                          <Label text="Estado De Centros">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="cmbEstadoCentros" onAction="#habilitarMostrarResultado" prefHeight="32.0" prefWidth="200.0" />
+                                          <Label text="Resultado">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cmbResultado" onAction="#habilitarMostrarCentros" prefHeight="32.0" prefWidth="338.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <Button fx:id="btnMostrarCentros" mnemonicParsing="false" onAction="#mostrarCentros" prefHeight="30.0" prefWidth="198.0" text="Mostrar Centros">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <GridPane.margin>
+                                          <Insets right="10.0" />
+                                       </GridPane.margin>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="495.0" prefWidth="896.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <TableView fx:id="tblCentro" prefHeight="464.0" prefWidth="896.0">
+                                       <columns>
+                                          <TableColumn fx:id="clmCentro" prefWidth="270.0" text="Centro" />
+                                          <TableColumn fx:id="clmCodigoCentro" prefWidth="130.0" text="Codigo" />
+                                          <TableColumn fx:id="clmAdministracion" prefWidth="150.0" text="Administración" />
+                                          <TableColumn fx:id="clmArea" text="Área" />
+                                          <TableColumn fx:id="clmNivel" prefWidth="100.0" text="Nivel" />
+                                          <TableColumn fx:id="clmMatricula" prefWidth="90.0" text="Matrícula" />
+                                          <TableColumn fx:id="clmEstado" prefWidth="100.0" text="Estado" />
+                                       </columns>
+                                    </TableView>
+                                    <Label fx:id="lblResultado" text="Resultados">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <GridPane layoutX="249.0" layoutY="-3.0" prefHeight="83.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="140.0">
+                           <children>
+                              <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#salir" prefHeight="30.0" prefWidth="100.0" text="Salir">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

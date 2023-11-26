@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teupa.controlador.ImportarCentroCtrl">
+    <stylesheets>
+        <URL value="@/com/teupa/estilo/importarcentro.css" />
+    </stylesheets>
+   <children>
+      <SplitPane dividerPositions="0.8840050112225973" orientation="VERTICAL" prefHeight="600.0" prefWidth="600.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="434.0" prefWidth="628.0">
+               <children>
+                  <TableView fx:id="tblCentro" editable="true" layoutX="299.0" layoutY="54.0" prefHeight="380.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="54.0">
+                     <columns>
+                        <TableColumn fx:id="clmCentro" prefWidth="300.0" text="Centro" />
+                        <TableColumn fx:id="clmCodigo" prefWidth="150.0" text="Código" />
+                        <TableColumn fx:id="clmAdministracion" prefWidth="150.0" text="Administración" />
+                        <TableColumn fx:id="clmZona" prefWidth="100.0" text="Zona" />
+                        <TableColumn fx:id="clmNivel" prefWidth="100.0" text="Nivel" />
+                        <TableColumn fx:id="clmCiclo" prefWidth="100.0" text="Ciclo" />
+                        <TableColumn fx:id="clmJornada" prefWidth="100.0" text="Jornada" />
+                        <TableColumn fx:id="clmCobertura" prefWidth="100.0" text="Cobertura" />
+                        <TableColumn fx:id="clmMatriculaFinal" prefWidth="150.0" text="Matrícula" />
+                     </columns>
+                  </TableView>
+                  <HBox alignment="CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="40.0" prefWidth="600.0" spacing="10.0">
+                     <children>
+                        <Label text="Archivo">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtRuta" prefHeight="28.0" prefWidth="310.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscarArchivo" prefHeight="30.0" prefWidth="150.0" text="Buscar archivo">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="-3.0" layoutY="19.0" prefHeight="48.0" prefWidth="598.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="19.0">
+                     <children>
+                        <Button fx:id="btnAceptar" minHeight="40.0" mnemonicParsing="false" onAction="#aceptar" prefWidth="110.0" text="Aceptar">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnEliminarFila" minHeight="40.0" mnemonicParsing="false" onAction="#eliminarFila" prefWidth="120.0" text="Eliminar fila">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnCancelar" minHeight="40.0" mnemonicParsing="false" onAction="#cancelar" prefWidth="110.0" text="Cancelar">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnSalir" minHeight="40.0" mnemonicParsing="false" onAction="#salir" prefWidth="110.0" text="Salir">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" layoutY="1.0" prefHeight="21.0" prefWidth="598.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
